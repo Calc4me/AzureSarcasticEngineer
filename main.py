@@ -3,15 +3,26 @@ import time
 
 # Define Variables
 max = 0
+# Max number (Depends on difficulty))
 diff = ""
+# Difficulty
 min = 0
+#  Minimum number (0)
 num = 0
+#  Random number
 tries = 0
+# #of tries (Depends on difficulty)
 guess = 0
+#Guess
 win = False
+#Win condition
 play = True
+#Play condition
 numofguesses = 1
+# #of gueses in the difficulty (Depends on difficulty)
 playagain = ""
+# y = play again
+# n = don't play again
 error = 0
 # error:
 # 0 = no error
@@ -48,17 +59,60 @@ def expert():
   print(" | |___ >  <| |_) |  __/ |  | |_ ")
   print(" |_____/_/\\_\\ .__/ \\___|_|   \\__|")
   print("            |_|                  ")
+def ore():
+  print("   ___  _ __ ")
+  print("  / _ \\| '__|")
+  print(" | (_) | |   ")
+  print("  \\___/|_|   ")
+def custom():
+  print("   ____          _                  ")
+  print("  / ___|   _ ___| |_ ___  _ __ ___  ")
+  print(" | |  | | | / __| __/ _ \\| '_ ` _ \\ ")
+  print(" | |__| |_| \\__ \\ || (_) | | | | | |")
+  print("  \\____\\__,_|___/\\__\\___/|_| |_| |_|")
+  print("__________________________________________________")
+  print("")
+def bar():
+  print("______________________________________________________________")
+def win():
+  print(" __   __           __        ___       _ ")
+  print(" \\ \\ / /__  _   _  \\ \\      / (_)_ __ | |")
+  print("  \\ V / _ \\| | | |  \\ \\ /\\ / /| | '_ \\| |")
+  print("   | | (_) | |_| |   \\ V  V / | | | | |_|")
+  print("   |_|\\___/ \\__,_|    \\_/\\_/  |_|_| |_(_)")
+def large():
+  print("")
+  print("  _____ ___   ___    _        _    ____   ____ _____ ")
+  print(" |_   _/ _ \\ / _ \\  | |      / \\  |  _ \\ / ___| ____|")
+  print("   | || | | | | | | | |     / _ \\ | |_) | |  _|  _|  ")
+  print("   | || |_| | |_| | | |___ / ___ \\|  _ <| |_| | |___ ")
+  print("   |_| \\___/ \\___/  |_____/_/   \\_\\_| \\_\\_____|_____|")
+def small():
+  print("")
+  print("  _                                    _ ")
+  print(" | |_ ___   ___    ___ _ __ ___   ___ | |")
+  print(" | __/ _ \\ / _ \\  / __| '_ ` _ \\ / _ \\| |")
+  print(" | || (_) | (_) | \\__ \\ | | | | | (_) | |")
+  print("  \\__\\___/ \\___/  |___/_| |_| |_|\\___/|_|")
+def lose():
+  print("You lose.")
+  print(" __        _ _                ")
+  print("/ _|  __ _(_) |_   _ _ __ ___ ")
+  print("| |_ / _` | | | | | | '__/ _ \\ ")
+  print("|  _| (_| | | | |_| | | |  __/")
+  print("|_|  \\__,_|_|_|\\__,_|_|  \\___|")
+#Text art
 
 #Intro
 GuessingGame()
 print("Welcome!")
 time.sleep(0.5)
 print("This is a guessing game.")
-print("__________________________________________________")
+bar()
 time.sleep(0.5)
 
 while play is True:
-  
+  #Text art intro
   print("Choose your difficulty:")
   time.sleep(0.5)
   easy()
@@ -69,20 +123,9 @@ while play is True:
   time.sleep(0.25)
   expert()
   time.sleep(0.5)
-  print("   ___  _ __ ")
-  print("  / _ \\| '__|")
-  print(" | (_) | |   ")
-  print("  \\___/|_|   ")
-  
+  ore()
   time.sleep(0.25)
-  
-  print("   ____          _                  ")
-  print("  / ___|   _ ___| |_ ___  _ __ ___  ")
-  print(" | |  | | | / __| __/ _ \\| '_ ` _ \\ ")
-  print(" | |__| |_| \\__ \\ || (_) | | | | | |")
-  print("  \\____\\__,_|___/\\__\\___/|_| |_| |_|")
-  print("__________________________________________________")
-  print("")
+  custom()
 
   #Choose Difficulty
   print("Guess the number in at most the number of tries provided.")
@@ -123,6 +166,7 @@ while play is True:
     tries = int(input("Enter the number of tries: "))
     num = random.randint(min, max)
 
+  #Introduce difficulty
   print("Difficulty:")
   print(diff)
   print("")
@@ -131,7 +175,7 @@ while play is True:
   print("Maximum number: " + str(max))
   print("")
   print("Tries: " + str(tries))
-  print("__________________________________________________")
+  bar()
   print("")
 
   #Main loop
@@ -150,34 +194,19 @@ while play is True:
       print("")
       print("That's right!")
       time.sleep(0.5)
-      print(" __   __           __        ___       _ ")
-      print(" \\ \\ / /__  _   _  \\ \\      / (_)_ __ | |")
-      print("  \\ V / _ \\| | | |  \\ \\ /\\ / /| | '_ \\| |")
-      print("   | | (_) | |_| |   \\ V  V / | | | | |_|")
-      print("   |_|\\___/ \\__,_|    \\_/\\_/  |_|_| |_(_)")
-      print("______________________________________________________________")
-
+      win()
+      bar()
       print("")
       print("")
       print("It took you " + str(numofguesses) + " guesses.")
       win = True
       break
     elif guess > num:
-      print("")
-      print("  _____ ___   ___    _        _    ____   ____ _____ ")
-      print(" |_   _/ _ \\ / _ \\  | |      / \\  |  _ \\ / ___| ____|")
-      print("   | || | | | | | | | |     / _ \\ | |_) | |  _|  _|  ")
-      print("   | || |_| | |_| | | |___ / ___ \\|  _ <| |_| | |___ ")
-      print("   |_| \\___/ \\___/  |_____/_/   \\_\\_| \\_\\_____|_____|")
-      print("______________________________________________________________")
+      large()
+      bar()
     elif guess < num:
-      print("")
-      print("  _                                    _ ")
-      print(" | |_ ___   ___    ___ _ __ ___   ___ | |")
-      print(" | __/ _ \\ / _ \\  / __| '_ ` _ \\ / _ \\| |")
-      print(" | || (_) | (_) | \\__ \\ | | | | | (_) | |")
-      print("  \\__\\___/ \\___/  |___/_| |_| |_|\\___/|_|")
-      print("__________________________________________________________________")
+      small()
+      bar()
     #Update variables
     tries = tries - 1
     numofguesses += 1
@@ -185,12 +214,7 @@ while play is True:
 
   #Loss condition
   if win is False:
-    print("You lose.")
-    print(" __        _ _                ")
-    print("/ _|  __ _(_) |_   _ _ __ ___ ")
-    print("| |_ / _` | | | | | | '__/ _ \\ ")
-    print("|  _| (_| | | | |_| | | |  __/")
-    print("|_|  \\__,_|_|_|\\__,_|_|  \\___|")
+    lose()
     print("It was " + str(num) + ".")
 
   error = 2
