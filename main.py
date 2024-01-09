@@ -217,18 +217,14 @@ while play is True:
     lose()
     print("It was " + str(num) + ".")
 
+  #Play Again
+  playagain = ""
   error = 2
-  #Play again
-  while error != 0:
+  while playagain != "y" and playagain != "n":
     playagain = input("Play again? (y/n) ").lower()
-    if playagain != "y" or "n":
-      error = 1
+    if playagain != "y" and playagain != "n":
       print("Invalid Input")
-    else:
-      error = 0
-  if playagain == "y":
-    play = True
-  elif playagain == "n":
+  if playagain == "n":
     play = False
     print("Thanks for playing!")
     break
