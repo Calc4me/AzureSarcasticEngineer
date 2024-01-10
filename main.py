@@ -128,6 +128,7 @@ while play is True:
   custom()
 
   #Choose Difficulty
+  diff = ""
   print("Guess the number in at most the number of tries provided.")
   while diff not in ["easy", "medium", "hard", "expert", "yes", "custom"]:
     diff = input("What difficulty? Please enter the name with good spelling. ").lower()
