@@ -187,9 +187,9 @@ while play is True:
     print("")
     #Guess loop
     guess = input("What is your guess? ")
-    while guess not in range(min,max):
+    while int(guess) < min or int(guess) > max:
       print("Try again. Out of range.")
-      guess = input("What is your guess? "))
+      guess = input("What is your guess? ")
     guess = int(guess)
     #Check if guess is correct
     if guess == num:
