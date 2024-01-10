@@ -74,7 +74,7 @@ def custom():
   print("")
 def bar():
   print("______________________________________________________________")
-def win():
+def winn():
   print(" __   __           __        ___       _ ")
   print(" \\ \\ / /__  _   _  \\ \\      / (_)_ __ | |")
   print("  \\ V / _ \\| | | |  \\ \\ /\\ / /| | '_ \\| |")
@@ -94,7 +94,7 @@ def small():
   print(" | __/ _ \\ / _ \\  / __| '_ ` _ \\ / _ \\| |")
   print(" | || (_) | (_) | \\__ \\ | | | | | (_) | |")
   print("  \\__\\___/ \\___/  |___/_| |_| |_|\\___/|_|")
-def lose():
+def losee():
   print("You lose.")
   print(" __        _ _                ")
   print("/ _|  __ _(_) |_   _ _ __ ___ ")
@@ -180,6 +180,7 @@ while play is True:
   print("")
 
   #Main loop
+  win = False
   while tries > 0:
     print("")
     print("")
@@ -196,7 +197,7 @@ while play is True:
       print("")
       print("That's right!")
       time.sleep(0.5)
-      win()
+      winn()
       bar()
       print("")
       print("")
@@ -216,7 +217,7 @@ while play is True:
 
   #Loss condition
   if win is False:
-    lose()
+    losee()
     print("It was " + str(num) + ".")
 
   #Play Again
