@@ -186,10 +186,11 @@ while play is True:
     print("This is guess " + str(numofguesses) + ", with " + str(tries) + " tries left.")
     print("")
     #Guess loop
-    guess = int(input("What is your guess? "))
-    while min > guess > max:
+    guess = input("What is your guess? ")
+    while guess not in range(min,max):
       print("Try again. Out of range.")
-      guess = int(input("What is your guess? "))
+      guess = input("What is your guess? "))
+    guess = int(guess)
     #Check if guess is correct
     if guess == num:
       print("")
